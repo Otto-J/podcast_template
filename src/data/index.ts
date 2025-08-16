@@ -3,7 +3,7 @@ import { PageData } from '../types';
 // 初始数据
 export const initialData: PageData = {
   podcastInfo: {
-    title: "No.81 和 OpenBuilder 许银聊 2025 年的 Web3 学习、成长路径",
+    title: "No.81 和 OpenBuild 许银聊 2025 年的 Web3 学习、成长路径",
     showName: "Web Worker"
   },
   guests: [
@@ -17,7 +17,7 @@ export const initialData: PageData = {
       id: "xuyin",
       name: "许银",
       role: "嘉宾",
-      description: "OpenBuilder Co-Funder"
+      description: "OpenBuild Co-Funder"
     },
     {
       id: "smart",
