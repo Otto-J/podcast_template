@@ -201,7 +201,7 @@ const PodcastTemplate: React.FC<PodcastTemplateProps> = ({ data }) => {
           <h1 className="text-4xl font-bold text-slate-100 mb-3 tracking-wide" style={{fontFamily: 'DingTalk-JinBuTi, serif'}}>
             {pageData.podcastInfo.title}
           </h1>
-          <div className="text-xl text-amber-400 font-medium tracking-wider" style={{fontFamily: 'DingTalk-JinBuTi, serif'}}>{pageData.podcastInfo.showName}</div>
+          <div className="text-xl font-medium tracking-wider" style={{fontFamily: 'DingTalk-JinBuTi, serif', color: '#34CC85'}}>{pageData.podcastInfo.showName}</div>
         </div>
       </div>
 
@@ -251,7 +251,7 @@ const PodcastTemplate: React.FC<PodcastTemplateProps> = ({ data }) => {
               {/* 现代风格人物信息 */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 via-slate-800 to-transparent text-slate-100 p-4">
                 <div className="text-lg font-bold text-emerald-400" style={{fontFamily: 'DingTalk-JinBuTi, serif'}}>{guest.name}</div>
-                <div className="text-sm text-amber-300 font-light" style={{fontFamily: 'DingTalk-JinBuTi, serif'}}>{guest.description}</div>
+                <div className="text-sm font-light text-white" style={{fontFamily: 'DingTalk-JinBuTi, serif'}}>{guest.description}</div>
               </div>
             </div>
           </div>
@@ -265,10 +265,10 @@ const PodcastTemplate: React.FC<PodcastTemplateProps> = ({ data }) => {
             {/* 播放/暂停按钮 */}
             <button
               onClick={togglePlayback}
-              className="group bg-transparent hover:bg-slate-800/60 backdrop-blur-sm border-2 border-transparent hover:border-emerald-400 rounded-full p-4 transition-all duration-300 hover:scale-110"
+              className="group bg-transparent hover:bg-slate-800/60 backdrop-blur-sm border-2 border-transparent hover:border-emerald-400 rounded-full p-4 hover:scale-110"
             >
               {/* 默认完全透明的图标 */}
-              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="opacity-0 group-hover:opacity-100">
                 <div className="flex items-center space-x-3">
                   {isPlaying ? (
                     <>
@@ -288,10 +288,10 @@ const PodcastTemplate: React.FC<PodcastTemplateProps> = ({ data }) => {
             {/* 快进30秒按钮 */}
             <button
               onClick={seekForward}
-              className="group bg-transparent hover:bg-slate-800/60 backdrop-blur-sm border-2 border-transparent hover:border-amber-400 rounded-full p-4 transition-all duration-300 hover:scale-110"
+              className="group bg-transparent hover:bg-slate-800/60 backdrop-blur-sm border-2 border-transparent hover:border-amber-400 rounded-full p-4 hover:scale-110"
             >
               {/* 默认完全透明的图标 */}
-              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="opacity-0 group-hover:opacity-100">
                 <div className="flex items-center space-x-3">
                   <FastForward className="w-6 h-6 text-amber-400" />
                   <span className="text-amber-400 font-medium">+30s</span>
@@ -302,10 +302,10 @@ const PodcastTemplate: React.FC<PodcastTemplateProps> = ({ data }) => {
             {/* 编辑按钮 */}
             <button
               onClick={openEditModal}
-              className="group bg-transparent hover:bg-slate-800/60 backdrop-blur-sm border-2 border-transparent hover:border-blue-400 rounded-full p-4 transition-all duration-300 hover:scale-110"
+              className="group bg-transparent hover:bg-slate-800/60 backdrop-blur-sm border-2 border-transparent hover:border-blue-400 rounded-full p-4 hover:scale-110"
             >
               {/* 默认完全透明的图标 */}
-              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="opacity-0 group-hover:opacity-100">
                 <div className="flex items-center space-x-3">
                   <Edit3 className="w-6 h-6 text-blue-400" />
                   <span className="text-blue-400 font-medium">编辑</span>
