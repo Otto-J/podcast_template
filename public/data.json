@@ -1,26 +1,26 @@
 {
   "podcastInfo": {
-    "title": "和 OpenBuild 许银聊 2025 年的 Web3 学习、成长路径",
-    "showName": "Web Worker No.82"
+    "title": "和 头疼君 张医生 聊疼和痛的那些事儿",
+    "showName": "Web Worker No.85"
   },
   "guests": [
-    {
-      "id": "xinbao",
-      "name": "辛宝",
-      "role": "主播",
-      "description": "Web3 小白"
-    },
-    {
-      "id": "xuyin",
-      "name": "许银",
-      "role": "嘉宾",
-      "description": "OpenBuild Co-Funder"
-    },
     {
       "id": "smart",
       "name": "Smart",
       "role": "主播",
-      "description": "Web3 小白"
+      "description": "Web Worker播客主播"
+    },
+    {
+      "id": "xuyin",
+      "name": "张医生",
+      "role": "嘉宾",
+      "description": "B 站@头疼君"
+    },
+    {
+      "id": "xinbao",
+      "name": "辛宝",
+      "role": "主播",
+      "description": "Web Worker播客主播"
     }
   ]
 }

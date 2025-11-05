@@ -19,7 +19,7 @@ export const loadInitialData = async (): Promise<PageData> => {
       guests: [
         {
           id: "xinbao",
-          name: "辛宝",
+          name: "辛宝2",
           role: "主播",
           description: "Web3 小白"
         },

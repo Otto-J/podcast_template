@@ -15,7 +15,6 @@ interface VideoState {
 const PodcastTemplate: React.FC<PodcastTemplateProps> = ({ data }) => {
   const [pageData, setPageData] = useState<PageData>(data || initialData);
   const [isLoading, setIsLoading] = useState(!data);
-  const { podcastInfo, guests } = pageData;
   
   // 加载数据
   useEffect(() => {
@@ -190,7 +189,7 @@ const PodcastTemplate: React.FC<PodcastTemplateProps> = ({ data }) => {
       </div>
       
       {/* 现代艺术风格标题区域 */}
-      <div className="relative z-10 text-center py-12">
+      <div className="relative z-10 text-center py-8">
         <div className="relative inline-block">
           {/* 装饰性线条框架 */}
           <div className="absolute -top-4 -left-8 w-16 h-1 bg-gradient-to-r from-amber-400 to-emerald-400"></div>
@@ -206,7 +205,7 @@ const PodcastTemplate: React.FC<PodcastTemplateProps> = ({ data }) => {
       </div>
 
       {/* 视频展示区域 - 三列布局 */}
-      <div className="grid grid-cols-3 gap-8 max-w-6xl mx-auto relative z-10">
+      <div className="grid grid-cols-3 gap-10 max-w-[1550px] mx-auto relative z-10">
         {pageData.guests.map((guest, index) => (
           <div key={guest.id} className="relative group">
             {/* 隐藏的文件输入 */}
@@ -216,10 +215,11 @@ const PodcastTemplate: React.FC<PodcastTemplateProps> = ({ data }) => {
               accept="video/mp4,video/webm,video/ogg"
               onChange={(e) => handleVideoSelect(index, e)}
               className="hidden"
+              aria-label="选择视频文件"
             />
             
             <div 
-              className="w-full aspect-[9/16] bg-slate-900 rounded-2xl border-3 border-emerald-400 overflow-hidden shadow-2xl relative cursor-pointer hover:border-amber-400 transition-colors duration-300"
+              className="w-full aspect-[9/16] bg-slate-100 rounded-2xl border-3 border-emerald-400 overflow-hidden shadow-2xl relative cursor-pointer hover:border-amber-400 transition-colors duration-300"
               onClick={() => handleVideoClick(index)}
             >
               {/* 艺术装饰边框 */}
@@ -243,13 +243,13 @@ const PodcastTemplate: React.FC<PodcastTemplateProps> = ({ data }) => {
                         {guest.name.charAt(0)}
                       </span>
                     </div>
-                    <p className="text-amber-300 text-sm">点击选择视频</p>
+                    <p className="text-slate-800 text-sm">点击选择视频</p>
                   </div>
                 </div>
               )}
               
               {/* 现代风格人物信息 */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 via-slate-800 to-transparent text-slate-100 p-4">
+              <div className="absolute bottom-0 left-0 right-0 bg-slate-800 text-slate-100 p-4">
                 <div className="text-lg font-bold text-emerald-400" style={{fontFamily: 'DingTalk-JinBuTi, serif'}}>{guest.name}</div>
                 <div className="text-sm font-light text-white" style={{fontFamily: 'DingTalk-JinBuTi, serif'}}>{guest.description}</div>
               </div>
@@ -328,6 +328,7 @@ const PodcastTemplate: React.FC<PodcastTemplateProps> = ({ data }) => {
               <button
                 onClick={closeEditModal}
                 className="text-slate-400 hover:text-slate-100 transition-colors"
+                aria-label="关闭编辑模态框"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -337,10 +338,11 @@ const PodcastTemplate: React.FC<PodcastTemplateProps> = ({ data }) => {
             <div className="p-6 space-y-6">
               {/* 播客标题 */}
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">
+                <label htmlFor="podcast-title" className="block text-sm font-medium text-slate-300 mb-2">
                   播客标题
                 </label>
                 <input
+                  id="podcast-title"
                   type="text"
                   value={editData.podcastInfo.title}
                   onChange={(e) => handleInputChange('title', e.target.value)}
@@ -351,10 +353,11 @@ const PodcastTemplate: React.FC<PodcastTemplateProps> = ({ data }) => {
               
               {/* 节目名称 */}
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">
+                <label htmlFor="show-name" className="block text-sm font-medium text-slate-300 mb-2">
                   节目名称
                 </label>
                 <input
+                  id="show-name"
                   type="text"
                   value={editData.podcastInfo.showName}
                   onChange={(e) => handleInputChange('showName', e.target.value)}
@@ -374,10 +377,11 @@ const PodcastTemplate: React.FC<PodcastTemplateProps> = ({ data }) => {
                       嘉宾 {index + 1}
                     </h4>
                     <div>
-                      <label className="block text-sm font-medium text-slate-300 mb-1">
+                      <label htmlFor={`guest-name-${index}`} className="block text-sm font-medium text-slate-300 mb-1">
                         姓名
                       </label>
                       <input
+                        id={`guest-name-${index}`}
                         type="text"
                         value={guest.name}
                         onChange={(e) => handleInputChange('name', e.target.value, index)}
@@ -386,10 +390,11 @@ const PodcastTemplate: React.FC<PodcastTemplateProps> = ({ data }) => {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-slate-300 mb-1">
+                      <label htmlFor={`guest-description-${index}`} className="block text-sm font-medium text-slate-300 mb-1">
                         介绍（包含职位和个人简介）
                       </label>
                       <textarea
+                        id={`guest-description-${index}`}
                         value={guest.description}
                         onChange={(e) => handleInputChange('description', e.target.value, index)}
                         rows={4}
