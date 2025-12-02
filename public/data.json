@@ -1,7 +1,7 @@
 {
   "podcastInfo": {
-    "title": "和 头疼君 张医生 聊疼和痛的那些事儿",
-    "showName": "Web Worker No.85"
+    "title": "Web Worker 聊 Async Talk",
+    "showName": "Web Worker 播客 No.86"
   },
   "guests": [
     {
@@ -12,9 +12,9 @@
     },
     {
       "id": "xuyin",
-      "name": "张医生",
+      "name": "Annatar",
       "role": "嘉宾",
-      "description": "B 站@头疼君"
+      "description": "AsyncTalk主播"
     },
     {
       "id": "xinbao",

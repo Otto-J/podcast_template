@@ -236,16 +236,17 @@ const PodcastTemplate: React.FC<PodcastTemplateProps> = ({ data }) => {
                   playsInline
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 bg-emerald-400 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-2xl font-bold text-slate-900">
-                        {guest.name.charAt(0)}
-                      </span>
-                    </div>
-                    <p className="text-slate-800 text-sm">点击选择视频</p>
-                  </div>
-                </div>
+                <></>
+                // <div className="w-full h-full flex items-center justify-center">
+                //   <div className="text-center">
+                //     <div className="w-20 h-20 bg-emerald-400 rounded-full mx-auto mb-4 flex items-center justify-center">
+                //       <span className="text-2xl font-bold text-slate-900">
+                //         {guest.name.charAt(0)}
+                //       </span>
+                //     </div>
+                //     <p className="text-slate-800 text-sm">点击选择视频</p>
+                //   </div>
+                // </div>
               )}
               
               {/* 现代风格人物信息 */}
